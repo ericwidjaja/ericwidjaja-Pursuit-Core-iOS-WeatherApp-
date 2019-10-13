@@ -42,3 +42,4 @@ struct DailyDatum: Codable {
     let temperatureMax: Double
     let temperatureMaxTime: Int
 }
+//need to change time with date formatter
