@@ -9,6 +9,18 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    //MARK: - Property
+    //to set up weather table view
+    var weatherInfo = [DailyData]() {
+        didSet {
+            weatherCollectionView.reloadData()
+            //to create WeatherCollectionViewCell file
+            
+        }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
