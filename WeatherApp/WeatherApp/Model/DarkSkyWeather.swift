@@ -3,7 +3,7 @@
 //  WeatherApp
 //
 //  Created by Eric Widjaja on 10/12/19.
-//  Copyright © 2019 David Rifkin. All rights reserved.
+//  Copyright © 2019 Eric Widjaja. All rights reserved.
 //
 
 import Foundation
@@ -24,11 +24,11 @@ enum Icon: String, Codable {
 struct Daily: Codable {
     let summary: String
     let icon: Icon
-    let data: [DailyDatum]
+    let data: [DailyData]
 }
 
-// MARK: - DailyDatum
-struct DailyDatum: Codable {
+// MARK: - DailyData
+struct DailyData: Codable {
     let time: Int
     let summary, icon: String
     let sunriseTime, sunsetTime: Int
@@ -42,4 +42,4 @@ struct DailyDatum: Codable {
     let temperatureMax: Double
     let temperatureMaxTime: Int
 }
-//need to change time with date formatter
+

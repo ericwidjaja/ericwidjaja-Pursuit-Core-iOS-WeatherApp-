@@ -1,15 +1,8 @@
 {
   "images" : [
     {
-      "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "icons8-rain-cloud-48 23-23-11-23.png",
-      "scale" : "2x"
-    },
-    {
       "size" : "20x20",
-      "idiom" : "iphone",
-      "filename" : "icons8-rain-cloud-48.png",
       "scale" : "2x"
     },
     {
@@ -51,6 +44,13 @@
       "idiom" : "ios-marketing",
       "size" : "1024x1024",
       "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "icons8-rain-cloud-48.png",
+      "unassigned" : true,
+      "scale" : "2x"
     }
   ],
   "info" : {
