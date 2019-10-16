@@ -12,14 +12,7 @@ import UIKit
 struct DarkSkyWeather: Codable {
     let timezone: String
     let daily: Daily
-//    var fixedName: String?{
-//        let split = timezone.components(separatedBy: "/")
-//        guard split?[1] != nil else { return ""}
-//        let city = split?[1].replacingOccurrences(of: "_", with: " ")
-//        return city
-//    }
-    
-    
+
     static func getForecastFromData(data: Data) throws -> [DailyDatum]? {
         do {
             let info = try JSONDecoder().decode(DarkSkyWeather.self, from: data)
@@ -29,19 +22,12 @@ struct DarkSkyWeather: Codable {
             print(error)
             return nil
         }
-    
     }
-
 }
-
-
-
-
 // MARK: - Daily
 struct Daily: Codable {
     let summary: String?
     let data: [DailyDatum]?
-    
 }
 
 // MARK: - DailyDatum

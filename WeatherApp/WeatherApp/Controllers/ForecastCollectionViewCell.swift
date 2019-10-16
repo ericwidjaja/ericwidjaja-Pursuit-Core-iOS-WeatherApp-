@@ -11,8 +11,12 @@ import UIKit
 class ForecastCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
-    
+   
     @IBOutlet weak var imageWeather: UIImageView!
+    
+    
+    @IBOutlet weak var forecastSummaryLabel: UILabel!
+    
     
     @IBOutlet weak var highLabel: UILabel!
     

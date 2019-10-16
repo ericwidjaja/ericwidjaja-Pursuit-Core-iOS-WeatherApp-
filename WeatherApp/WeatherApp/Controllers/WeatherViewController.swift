@@ -51,6 +51,7 @@ class WeatherViewController: UIViewController {
                 }
             }
         }
+    
    private func loadData(zip: String){
         ZipCodeHelper.getLatLong(fromZipCode: zip) { (result) in
             DispatchQueue.main.async {
@@ -78,9 +79,12 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = forecastCollectionView.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as? ForecastCollectionViewCell else { return UICollectionViewCell()}
         let weather = forecast[indexPath.row]
-
-        cell.highLabel.text = "High: \( weather.temperatureHigh ?? 0.0)"
-        cell.lowLabel.text = "Low: \(weather.temperatureLow ?? 0.0)"
+        
+        cell.dateLabel.text = "Date: \(weather.time ?? 0)"
+        cell.imageWeather.image = UIImage(named: "\(weather.icon! )")
+        cell.forecastSummaryLabel.text = weather.summary
+        cell.highLabel.text = "High:   \( weather.temperatureHigh ?? 0.0)"
+        cell.lowLabel.text = "Low :   \(weather.temperatureLow ?? 0.0)"
         return cell
     }
     
@@ -89,7 +93,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 406, height: 395)
+            return CGSize(width: 400, height: 407)
         }
 }
         //resent detail VCto build the collectionView func ---> modally present detailForecast VC
