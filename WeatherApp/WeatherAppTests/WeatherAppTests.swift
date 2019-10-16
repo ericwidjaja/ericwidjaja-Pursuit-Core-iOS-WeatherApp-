@@ -29,5 +29,17 @@ class WeatherAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    func testDarkSkyWeatherModel() {
+        guard let path = Bundle.main.path(forResource: "DarkSkyWeather", ofType: "json") else { return }
+        
+        let url = URL(fileURLWithPath: path)
+        do {
+            let data = try Data(contentsOf: url)
+            let testWeather = try DarkSkyWeather.getForecastFromData(data: data)
+            XCTAssert(testWeather.count > 0, "We have \(testWeather.count) listings")
+        } catch {
+            print(error)
+            XCTFail()
+        }
+    }
 }

@@ -12,6 +12,18 @@ import UIKit
 struct DarkSkyWeather: Codable {
     let timezone: String
     let daily: Daily
+    
+    static func getForecastFromData(data: Data) throws -> DarkSkyWeather? {
+        do {
+            let info = try JSONDecoder().decode(DarkSkyWeather.self, from: data)
+            return info
+    
+        } catch {
+            print(error)
+            return nil
+        }
+    
+    }
 }
 
 enum Icon: String, Codable {
