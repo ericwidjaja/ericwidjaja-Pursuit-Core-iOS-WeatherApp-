@@ -12,17 +12,17 @@ class WeatherViewController: UIViewController {
     
     //MARK: - Properties
     //to set up weather table view
-    var weatherInfo = [DailyData]() {
-        didSet {
-//            weatherCollectionView.reloadData()
-            //to create WeatherCollectionViewCell file
-        }
-    }
-    var layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+    @IBOutlet weak var cityNameLabel: UILabel!
+    
+    @IBOutlet weak var forecastCollectionView: UICollectionView!
+    
+    @IBOutlet weak var zipCodeInputLabel: UILabel!
+    
+    
+    @IBOutlet weak var zipCodeInputField: UITextField!
     
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
