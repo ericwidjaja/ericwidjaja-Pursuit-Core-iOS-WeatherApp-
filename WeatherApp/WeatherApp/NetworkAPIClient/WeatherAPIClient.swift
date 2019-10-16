@@ -9,32 +9,31 @@
 import Foundation
 import UIKit
 
-class WeatherAPIClient {
-    //shared = manager
-    static let shared = WeatherAPIClient ()
-    
-    func getWeather(latLong:String, completionHandler:@escaping(Result<[DailyData],AppError>) -> Void) {
-        let url = "https://api.darksky.net/forecast/\(SecretAPIKeys.darkSkyKey)/\(latLong)"
-       
-        guard let urlString = URL(string:url) else {
-           completionHandler(.failure(.badURL))
-            return
-        }
-        NetworkHelper.manager.performDataTask(withUrl: urlString, andMethod: .get) {
-            (results) in
-            DispatchQueue.main.async {
-                switch results {
+struct WeatherAPIClient {
+    private init() {}
+        static let shared = WeatherAPIClient()
+        
+        func getWeatherFrom(lat: Double, long: Double, completionHandler: @escaping (Result<[DailyDatum], AppError>) -> ()) {
+            let urlStr = "https://api.darksky.net/forecast/\(SecretAPIKeys.darkSkyKey)/\(lat),\(long)"
+            guard let url = URL(string: urlStr) else {
+                completionHandler(.failure(AppError.badURL))
+                return
+            }
+            NetworkHelper.manager.performDataTask(withUrl: url, andMethod: .get) { (result) in
+                switch result {
                 case .failure(let error):
-                    completionHandler(.failure(error))
-                case.success(let data):
-                    do { let weatherData = try JSONDecoder().decode(DarkSkyWeather.self, from: data)
-                        completionHandler(.success(weatherData.daily.data))
-                    } catch{
-        completionHandler(.failure(.invalidJSONResponse))
+                    completionHandler(.failure(.other(rawError: error)))
+                case .success(let data):
+                    
+                    do {
+                    let forecast = try DarkSkyWeather.getForecastFromData(data: data)
+                        completionHandler(.success(forecast!))
+                    }
+                    catch {
+                        completionHandler(.failure(.other(rawError: error)))
                     }
                 }
             }
         }
+        
     }
-    
-}

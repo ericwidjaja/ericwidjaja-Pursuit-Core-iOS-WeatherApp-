@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import WeatherApp
+
 
 class WeatherAppTests: XCTestCase {
 
@@ -35,7 +37,9 @@ class WeatherAppTests: XCTestCase {
         let url = URL(fileURLWithPath: path)
         do {
             let data = try Data(contentsOf: url)
-            let testWeather = try DarkSkyWeather.getForecastFromData(data: data)
+            
+            let testWeather = try DarkSkyWeather.getForecastFromData(data: data) ?? []
+            print(testWeather.count)
             XCTAssert(testWeather.count > 0, "We have \(testWeather.count) listings")
         } catch {
             print(error)

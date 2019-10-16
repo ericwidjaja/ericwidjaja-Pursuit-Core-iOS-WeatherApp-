@@ -12,11 +12,18 @@ import UIKit
 struct DarkSkyWeather: Codable {
     let timezone: String
     let daily: Daily
+//    var fixedName: String?{
+//        let split = timezone.components(separatedBy: "/")
+//        guard split?[1] != nil else { return ""}
+//        let city = split?[1].replacingOccurrences(of: "_", with: " ")
+//        return city
+//    }
     
-    static func getForecastFromData(data: Data) throws -> DarkSkyWeather? {
+    
+    static func getForecastFromData(data: Data) throws -> [DailyDatum]? {
         do {
             let info = try JSONDecoder().decode(DarkSkyWeather.self, from: data)
-            return info
+            return info.daily.data
     
         } catch {
             print(error)
@@ -24,34 +31,47 @@ struct DarkSkyWeather: Codable {
         }
     
     }
+
 }
 
-enum Icon: String, Codable {
-    case cloudy = "cloudy"
-    case partlyCloudyNight = "partly-cloudy-night"
-    case rain = "rain"
-}
+
+
 
 // MARK: - Daily
 struct Daily: Codable {
-    let summary: String
-    let icon: Icon
-    let data: [DailyData]
+    let summary: String?
+    let data: [DailyDatum]?
+    
 }
 
-// MARK: - DailyData
-struct DailyData: Codable {
-    let time: Int
-    let summary, icon: String
-    let sunriseTime, sunsetTime: Int
-    let precipIntensity:Double
-    let precipProbability: Double
-    let precipType: Icon?
-    let temperatureHigh: Double
-    let temperatureLow: Double
-    let windSpeed: Double
-    let temperatureMinTime: Int
-    let temperatureMax: Double
-    let temperatureMaxTime: Int
+// MARK: - DailyDatum
+struct DailyDatum: Codable {
+    let time: Int?
+    let icon: String?
+    let summary: String?
+    let sunriseTime, sunsetTime: Int?
+    let moonPhase, precipIntensity, precipIntensityMax: Double?
+    let precipIntensityMaxTime: Int?
+    let precipProbability: Double?
+    let temperatureHigh: Double?
+    let temperatureHighTime: Int?
+    let temperatureLow: Double?
+    let temperatureLowTime: Int?
+    let apparentTemperatureHigh: Double?
+    let apparentTemperatureHighTime: Int?
+    let apparentTemperatureLow: Double?
+    let apparentTemperatureLowTime: Int?
+    let dewPoint, humidity, pressure, windSpeed: Double?
+    let windGust: Double?
+    let windGustTime, windBearing: Int?
+    let cloudCover: Double?
+    let uvIndex, uvIndexTime: Int?
+    let visibility, ozone, temperatureMin: Double?
+    let temperatureMinTime: Int?
+    let temperatureMax: Double?
+    let temperatureMaxTime: Int?
+    let apparentTemperatureMin: Double?
+    let apparentTemperatureMinTime: Int?
+    let apparentTemperatureMax: Double?
+    let apparentTemperatureMaxTime: Int?
 }
-
