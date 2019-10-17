@@ -2,8 +2,8 @@
 //  FaveViewController.swift
 //  WeatherApp
 //
-//  Created by Eric Widjaja on 10/13/19.
-//  Copyright © 2019 David Rifkin. All rights reserved.
+//  Created by Eric Widjaja on 10/12/19.
+//  Copyright © 2019 Eric Widjaja. All rights reserved.
 //
 
 import UIKit

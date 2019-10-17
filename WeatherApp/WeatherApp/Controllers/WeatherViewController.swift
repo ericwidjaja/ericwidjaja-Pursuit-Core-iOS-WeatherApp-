@@ -17,6 +17,7 @@ class WeatherViewController: UIViewController {
             forecastCollectionView.reloadData()
         }
     }
+
     
     //MARK: - Outlets
     
@@ -33,6 +34,8 @@ class WeatherViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        //MARK: - to show the initial display set to NYC
+        loadData(zip: "10010")
         forecastCollectionView.delegate = self
         forecastCollectionView.dataSource = self
         zipCodeInputField.delegate = self
