@@ -32,6 +32,11 @@
 		DF8FC1AA235417A900EB8B98 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */; };
 		DFF916982357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */; };
 		DFF916992357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */; };
+		DFF916CD235903F600C89967 /* PictureAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916CC235903F600C89967 /* PictureAPIClient.swift */; };
+		DFF916D22359057C00C89967 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D12359057C00C89967 /* ImagePersistence.swift */; };
+		DFF916D32359057C00C89967 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D12359057C00C89967 /* ImagePersistence.swift */; };
+		DFF916D8235906A700C89967 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D7235906A700C89967 /* PersistenceHelper.swift */; };
+		DFF916D9235906A700C89967 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D7235906A700C89967 /* PersistenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,9 @@
 		DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DarkSkyWeather.json; sourceTree = "<group>"; };
 		DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFF916CC235903F600C89967 /* PictureAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureAPIClient.swift; sourceTree = "<group>"; };
+		DFF916D12359057C00C89967 /* ImagePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePersistence.swift; sourceTree = "<group>"; };
+		DFF916D7235906A700C89967 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
