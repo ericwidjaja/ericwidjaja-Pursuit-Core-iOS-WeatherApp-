@@ -17,8 +17,6 @@ class WeatherViewController: UIViewController {
             forecastCollectionView.reloadData()
         }
     }
-
-    
     //MARK: - Outlets
     
     var userZIP = ""
@@ -30,8 +28,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var forecastCollectionView: UICollectionView!
     
     @IBOutlet weak var zipCodeInputField: UITextField!
-    
-    
     
     override func viewDidLoad() {
         //MARK: - to show the initial display set to NYC
@@ -98,6 +94,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: 400, height: 407)
         }
+    
 }
         //resent detail VCto build the collectionView func ---> modally present detailForecast VC
 
@@ -116,4 +113,3 @@ extension WeatherViewController: UITextFieldDelegate {
         }
     }
 }
-
