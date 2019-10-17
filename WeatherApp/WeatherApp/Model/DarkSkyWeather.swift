@@ -60,4 +60,26 @@ struct DailyDatum: Codable {
     let apparentTemperatureMinTime: Int?
     let apparentTemperatureMax: Double?
     let apparentTemperatureMaxTime: Int?
+
+    func getDateFromTime(time:Int) -> String {
+
+        let date = NSDate(timeIntervalSince1970: TimeInterval(time))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
+        dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+        let testDate = dateFormatter.string(from: date as Date)
+        
+        return testDate.components(separatedBy: " at")[0]
+    }
+
+    func getSpecificTimeFromTime(time:Int) -> String {
+
+        let date = NSDate(timeIntervalSince1970: TimeInterval(time))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium //Set time style
+        dateFormatter.dateStyle = DateFormatter.Style.medium //Set date style
+        let testDate = dateFormatter.string(from: date as Date)
+        
+        return testDate.components(separatedBy: " at")[1]
+    }
 }

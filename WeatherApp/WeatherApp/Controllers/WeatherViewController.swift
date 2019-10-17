@@ -80,10 +80,10 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = forecastCollectionView.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as? ForecastCollectionViewCell else { return UICollectionViewCell()}
         let weather = forecast[indexPath.row]
         
-        cell.dateLabel.text = "Date: \(weather.time ?? 0)"
+        cell.dateLabel.text = weather.getDateFromTime(time: weather.time ?? 3)
         cell.imageWeather.image = UIImage(named: "\(weather.icon! )")
         cell.forecastSummaryLabel.text = weather.summary
-        cell.highLabel.text = "High:   \( weather.temperatureHigh ?? 0.0)"
+        cell.highLabel.text = "High:   \(weather.temperatureHigh ?? 0.0)"
         cell.lowLabel.text = "Low :   \(weather.temperatureLow ?? 0.0)"
         return cell
     }
