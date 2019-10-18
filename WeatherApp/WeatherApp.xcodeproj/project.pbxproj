@@ -30,11 +30,11 @@
 		DF8FC1A423538AF300EB8B98 /* DarkSkyWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */; };
 		DF8FC1A523538AF300EB8B98 /* DarkSkyWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */; };
 		DF8FC1AA235417A900EB8B98 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */; };
+		DFEA7E4A23590DEC0001B603 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */; };
+		DFEA7E4B23590DEC0001B603 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */; };
 		DFF916982357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */; };
 		DFF916992357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */; };
 		DFF916CD235903F600C89967 /* PictureAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916CC235903F600C89967 /* PictureAPIClient.swift */; };
-		DFF916D22359057C00C89967 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D12359057C00C89967 /* ImagePersistence.swift */; };
-		DFF916D32359057C00C89967 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D12359057C00C89967 /* ImagePersistence.swift */; };
 		DFF916D8235906A700C89967 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D7235906A700C89967 /* PersistenceHelper.swift */; };
 		DFF916D9235906A700C89967 /* PersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF916D7235906A700C89967 /* PersistenceHelper.swift */; };
 /* End PBXBuildFile section */
@@ -74,9 +74,9 @@
 		DF8FC1A0235385CB00EB8B98 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DarkSkyWeather.json; sourceTree = "<group>"; };
 		DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
+		DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePersistence.swift; sourceTree = "<group>"; };
 		DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFF916CC235903F600C89967 /* PictureAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureAPIClient.swift; sourceTree = "<group>"; };
-		DFF916D12359057C00C89967 /* ImagePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePersistence.swift; sourceTree = "<group>"; };
 		DFF916D7235906A700C89967 /* PersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +119,7 @@
 		548CE050234D33B500B5177D /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				DFF916DA235908A000C89967 /* Persistence Helpers */,
 				DF8FC17F2352CE2A00EB8B98 /* Model */,
 				548CE051234D33B500B5177D /* AppDelegate.swift */,
 				548CE053234D33B500B5177D /* SceneDelegate.swift */,
@@ -180,6 +181,7 @@
 		DF8FC1AC23541E8B00EB8B98 /* NetworkAPIClient */ = {
 			isa = PBXGroup;
 			children = (
+				DFF916CC235903F600C89967 /* PictureAPIClient.swift */,
 				DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */,
 			);
 			path = NetworkAPIClient;
@@ -191,6 +193,15 @@
 				548CE057234D33B500B5177D /* Main.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DFF916DA235908A000C89967 /* Persistence Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DFF916D7235906A700C89967 /* PersistenceHelper.swift */,
+				DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */,
+			);
+			path = "Persistence Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,8 @@
 				DF8FC1872352CF1D00EB8B98 /* NetworkHelper.swift in Sources */,
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
 				548CE056234D33B500B5177D /* DetailWeatherViewController.swift in Sources */,
+				DFF916D8235906A700C89967 /* PersistenceHelper.swift in Sources */,
+				DFF916CD235903F600C89967 /* PictureAPIClient.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				DF8FC1992352D5B500EB8B98 /* DarkSkyWeather.swift in Sources */,
 				DFF916982357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */,
@@ -313,6 +326,7 @@
 				DF8FC1832352CE8200EB8B98 /* ImageHelper.swift in Sources */,
 				DF8FC1852352CECC00EB8B98 /* AppError.swift in Sources */,
 				DF8FC1972352D50600EB8B98 /* PixabayPicture.swift in Sources */,
+				DFEA7E4A23590DEC0001B603 /* ImagePersistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +336,8 @@
 			files = (
 				DF8FC19F2353858400EB8B98 /* FaveViewController.swift in Sources */,
 				DFF916992357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */,
+				DFEA7E4B23590DEC0001B603 /* ImagePersistence.swift in Sources */,
+				DFF916D9235906A700C89967 /* PersistenceHelper.swift in Sources */,
 				DF8FC18F2352D0D400EB8B98 /* WeatherAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

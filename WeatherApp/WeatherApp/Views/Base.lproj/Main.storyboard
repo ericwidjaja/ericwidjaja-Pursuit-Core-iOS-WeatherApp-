@@ -11,7 +11,7 @@
         <!--Detail Weather View Controller-->
         <scene sceneID="IbY-GB-nfN">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="1ZA-mw-NfD" customClass="DetailWeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailWeatherVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1ZA-mw-NfD" customClass="DetailWeatherViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n9-pq-Mo5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hek-xB-2XK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="82"/>
+            <point key="canvasLocation" x="2460.8695652173915" y="81.696428571428569"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -31,8 +31,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-5i-Bw0">
-                                <rect key="frame" x="0.0" y="152" width="414" height="470"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-5i-Bw0">
+                                <rect key="frame" x="0.0" y="196" width="414" height="473"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="473" id="apK-5b-gqs"/>
@@ -45,7 +45,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="UMz-qj-XVo" userLabel="ForecastCell" customClass="ForecastCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="406" height="470"/>
+                                        <rect key="frame" x="0.0" y="1.5" width="406" height="470"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fhx-tU-12x">
                                             <rect key="frame" x="0.0" y="0.0" width="406" height="470"/>
@@ -128,7 +128,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cityName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I07-I8-eUg">
-                                <rect key="frame" x="120" y="94" width="174" height="50"/>
+                                <rect key="frame" x="120" y="138" width="174" height="50"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wbi-Y4-eHb"/>
@@ -170,9 +170,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="cloud.sun" catalog="system" id="d5o-LQ-8DS">
-                        <color key="badgeColor" red="0.80708677029999998" green="0.80708677029999998" blue="0.80708677029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="UVv-VA-wd2"/>
                     <connections>
                         <outlet property="cityNameLabel" destination="I07-I8-eUg" id="wf7-TR-mhO"/>
                         <outlet property="enterZIpLabel" destination="LGo-n1-NTg" id="8oF-4G-ofX"/>
@@ -182,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="82"/>
+            <point key="canvasLocation" x="1776.8115942028987" y="81.696428571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5fL-8d-yKf">
@@ -197,12 +195,33 @@
                         <color key="barTintColor" red="0.81742414210000003" green="0.81742414210000003" blue="0.81742414210000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="7HJ-5b-M1c"/>
+                        <segue destination="SJW-fK-gPJ" kind="relationship" relationship="viewControllers" id="7HJ-5b-M1c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WEv-S0-69x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="81.696428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qc5-V4-H7k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJW-fK-gPJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="cloud.sun" catalog="system" id="d5o-LQ-8DS">
+                        <color key="badgeColor" red="0.80708677029999998" green="0.80708677029999998" blue="0.80708677029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OWL-WY-jPi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oWn-27-iuN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXV-vc-828" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866.66666666666674" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>

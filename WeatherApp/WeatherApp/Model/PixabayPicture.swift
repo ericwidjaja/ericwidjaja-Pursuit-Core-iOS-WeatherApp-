@@ -13,6 +13,11 @@ struct PixabayPicture: Codable {
     let totalHits: Int
     let hits: [Hit]
     let total: Int
+    
+    static func getPicture(data: Data) throws -> PixabayPicture {
+        
+        try JSONDecoder().decode(PixabayPicture.self, from: data)
+    }
 }
 
 // MARK: - Hit

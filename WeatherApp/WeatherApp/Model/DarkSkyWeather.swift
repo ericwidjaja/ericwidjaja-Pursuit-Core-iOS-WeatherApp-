@@ -39,9 +39,9 @@ struct DailyDatum: Codable {
     let moonPhase, precipIntensity, precipIntensityMax: Double?
     let precipIntensityMaxTime: Int?
     let precipProbability: Double?
-    let temperatureHigh: Double?
+    let temperatureHigh: Double
     let temperatureHighTime: Int?
-    let temperatureLow: Double?
+    let temperatureLow: Double
     let temperatureLowTime: Int?
     let apparentTemperatureHigh: Double?
     let apparentTemperatureHighTime: Int?
