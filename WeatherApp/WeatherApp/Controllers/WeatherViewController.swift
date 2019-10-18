@@ -3,7 +3,7 @@
 //  WeatherApp
 //
 //  Created by Eric Widjaja on 10/13/19.
-//  Copyright © 2019 David Rifkin. All rights reserved.
+//  Copyright © 2019 Eric Widjaja. All rights reserved.
 //
 
 import UIKit
@@ -40,18 +40,18 @@ class WeatherViewController: UIViewController {
     
     private func loadForecast(lat: Double, long: Double){
         WeatherAPIClient.shared.getWeatherFrom(lat: lat, long: long) { (result) in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case .success(let data):
-                        self.forecast = data
-                    }
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let data):
+                    self.forecast = data
                 }
             }
         }
+    }
     
-   private func loadData(zip: String){
+    private func loadData(zip: String){
         ZipCodeHelper.getLatLong(fromZipCode: zip) { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -62,14 +62,14 @@ class WeatherViewController: UIViewController {
                     self.loadForecast(lat: lat, long: long)
                     self.cityNameLabel.text = name
                     self.enterZIpLabel.text = "Enter Zipcode:"
-                   
+                    
                 }
             }
         }
     }
-   
-}
     
+}
+
 extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return forecast.count
@@ -82,8 +82,8 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.dateLabel.text = weather.getDateFromTime(time: weather.time ?? 3)
         cell.imageWeather.image = UIImage(named: "\(weather.icon! )")
         cell.forecastSummaryLabel.text = weather.summary
-        cell.highLabel.text = "High:   \(weather.temperatureHigh ?? 0.0)"
-        cell.lowLabel.text = "Low :   \(weather.temperatureLow ?? 0.0)"
+        cell.highLabel.text = "High:   \(weather.temperatureHigh)"
+        cell.lowLabel.text = "Low :   \(weather.temperatureLow)"
         return cell
     }
     
@@ -92,24 +92,32 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 400, height: 407)
-        }
+        return CGSize(width: 400, height: 470)
+    }
+        
+//MARK: - Passing and present data modally in detail VC
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let weather = forecast[indexPath.row]
+        let detailVC = DetailWeatherViewController()
+        detailVC.cityNameLabel.text = self.cityNameLabel.text
+        detailVC.weatherDailyData = weather
     
+        self.modalPresentationStyle = .overCurrentContext
+        present(detailVC, animated: true, completion: nil)
+    }
 }
-        //resent detail VCto build the collectionView func ---> modally present detailForecast VC
 
-
-        //MARK: TextField Extension
+//MARK: TextField Extension
 extension WeatherViewController: UITextFieldDelegate {
     
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            if zipCodeInputField.text?.count == 5 {
-                zipCodeInputField.resignFirstResponder()
-                loadData(zip: zipCodeInputField.text ?? "90210")
-                
-        return true
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if zipCodeInputField.text?.count == 5 {
+            zipCodeInputField.resignFirstResponder()
+            loadData(zip: zipCodeInputField.text ?? "90210")
+            
+            return true
         } else {
-        return false
+            return false
         }
     }
 }

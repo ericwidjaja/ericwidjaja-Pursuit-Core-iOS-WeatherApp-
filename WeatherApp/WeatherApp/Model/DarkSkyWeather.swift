@@ -35,7 +35,7 @@ struct DailyDatum: Codable {
     let time: Int?
     let icon: String?
     let summary: String?
-    let sunriseTime, sunsetTime: Int?
+    let sunriseTime, sunsetTime: Int
     let moonPhase, precipIntensity, precipIntensityMax: Double?
     let precipIntensityMaxTime: Int?
     let precipProbability: Double?
