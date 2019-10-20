@@ -132,7 +132,7 @@ class DetailWeatherViewController: UIViewController {
         PictureAPIClient.shared.getPictures(search: name) {(result) in DispatchQueue.main.async {
             switch result {
             case .success(let PixabayPicture):
-                self.picture = PixabayPicture.hits[0].largeImageURL ?? ""
+                self.picture = PixabayPicture.hits[0].largeImageURL 
                 print(self.picture)
                 ImageHelper.shared.getImage(urlStr: self.picture) { (result) in
                     DispatchQueue.main.async {
@@ -172,8 +172,8 @@ class DetailWeatherViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
         addSubviews()
         setUpConstraints()
+        loadPicture(name: cityNameLabel.text!)
         self.view.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        
         super.viewDidLoad()
     }
 }

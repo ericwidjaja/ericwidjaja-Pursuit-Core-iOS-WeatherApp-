@@ -22,7 +22,7 @@ struct PixabayPicture: Codable {
 
 // MARK: - Hit
 struct Hit: Codable {
-    let largeImageURL: String?
+    let largeImageURL: String
     let webformatHeight, webformatWidth, likes, imageWidth: Int?
     let id, userID, views, comments: Int?
     let pageURL: String?
