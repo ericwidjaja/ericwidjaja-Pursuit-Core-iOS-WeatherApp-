@@ -10,6 +10,7 @@ import UIKit
 
 class DetailWeatherViewController: UIViewController {
     
+    var picture = "City Pictures Are Not Loading"
     var weatherDailyData: DailyDatum!
     
     lazy var cityNameLabel: UILabel = {
@@ -92,7 +93,7 @@ class DetailWeatherViewController: UIViewController {
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle("Back", for: .normal)
-        button.backgroundColor = UIColor.link
+        button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
         button.addTarget(self, action: #selector(backButtonPressed(sender:)), for: .touchUpInside)
         
         return button
@@ -117,6 +118,39 @@ class DetailWeatherViewController: UIViewController {
         ])
     }
     
+    private func constrainIcon(){
+        weatherIcon.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            weatherIcon.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            weatherIcon.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -190),
+            weatherIcon.heightAnchor.constraint(equalToConstant: 365),
+            weatherIcon.widthAnchor.constraint(equalTo: self.view.widthAnchor)
+        ])
+    }
+    
+    private func loadPicture(name: String){
+        PictureAPIClient.shared.getPictures(search: name) {(result) in DispatchQueue.main.async {
+            switch result {
+            case .success(let PixabayPicture):
+                self.picture = PixabayPicture.hits[0].largeImageURL ?? ""
+                print(self.picture)
+                ImageHelper.shared.getImage(urlStr: self.picture) { (result) in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let pic):
+                            self.weatherIcon.image = pic
+                        case .failure(let error):
+                            print(error)
+                            print(self.picture)
+                        }
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+            }
+        }
+    }
     //MARK: - Methods(in obj-C)
     @objc func backButtonPressed(sender: UIButton){
         dismiss(animated: true, completion: nil)
@@ -124,6 +158,7 @@ class DetailWeatherViewController: UIViewController {
     private func setUpConstraints(){
         backButtonConstrain()
         constrainStack()
+        constrainIcon()
     }
     private func addSubviews(){
         view.addSubview(cityNameLabel)
