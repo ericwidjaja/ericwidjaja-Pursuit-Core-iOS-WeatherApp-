@@ -11,6 +11,7 @@ import UIKit
 class DetailWeatherViewController: UIViewController {
     
     var picture = "City Pictures Are Not Loading"
+    
     var weatherDailyData: DailyDatum!
     
     lazy var cityNameLabel: UILabel = {
@@ -85,7 +86,7 @@ class DetailWeatherViewController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [cityNameLabel, highTempLabel, lowTempLabel, sunriseLabel, sunsetLabel, precipLabel])
         stack.alignment = .center
         stack.axis = .vertical
-        stack.spacing = CGFloat(3)
+        stack.spacing = CGFloat(5)
         stack.distribution = .equalSpacing
         return stack
     }()
@@ -93,13 +94,24 @@ class DetailWeatherViewController: UIViewController {
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.setTitle("Back", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
         button.addTarget(self, action: #selector(backButtonPressed(sender:)), for: .touchUpInside)
         
         return button
     }()
+
+    lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("SAVE", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        return button
+    }()
     
-    private func backButtonConstrain(){
+    private func backButtonConstraints(){
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             backButton.heightAnchor.constraint(equalToConstant: 50),
@@ -108,7 +120,8 @@ class DetailWeatherViewController: UIViewController {
             backButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -400)
         ])
     }
-    private func constrainStack(){
+    
+    private func stackConstraints(){
         detailInfoStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             detailInfoStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -118,7 +131,7 @@ class DetailWeatherViewController: UIViewController {
         ])
     }
     
-    private func constrainIcon(){
+    private func iconConstraints(){
         weatherIcon.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             weatherIcon.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -128,11 +141,21 @@ class DetailWeatherViewController: UIViewController {
         ])
     }
     
+    private func saveButtonConstraints(){
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            saveButton.heightAnchor.constraint(equalToConstant: 50),
+            saveButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, constant: 0),
+            saveButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
+            saveButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 375)
+        ])
+    }
+    
     private func loadPicture(name: String){
         PictureAPIClient.shared.getPictures(search: name) {(result) in DispatchQueue.main.async {
             switch result {
             case .success(let PixabayPicture):
-                self.picture = PixabayPicture.hits[0].largeImageURL 
+                self.picture = PixabayPicture.hits[0] .largeImageURL
                 print(self.picture)
                 ImageHelper.shared.getImage(urlStr: self.picture) { (result) in
                     DispatchQueue.main.async {
@@ -155,25 +178,40 @@ class DetailWeatherViewController: UIViewController {
     @objc func backButtonPressed(sender: UIButton){
         dismiss(animated: true, completion: nil)
     }
+    
+    @objc func saveButtonPressed() {
+        let icon = weatherIcon.image?.pngData()
+        let favoritedPict = FavePict(image: icon!, name: cityNameLabel.text!)
+        do {
+            try
+            PicturePersistenceHelper.manager.save(newPhoto: favoritedPict)
+            dismiss(animated: true, completion: nil)
+        } catch {
+            return
+        }
+        
+    }
+    
     private func setUpConstraints(){
-        backButtonConstrain()
-        constrainStack()
-        constrainIcon()
+        backButtonConstraints()
+        stackConstraints()
+        iconConstraints()
+        saveButtonConstraints()
     }
     private func addSubviews(){
         view.addSubview(cityNameLabel)
         view.addSubview(backButton)
         view.addSubview(weatherIcon)
         view.addSubview(detailInfoStack)
+        view.addSubview(saveButton)
     }
-    
     
     override func viewDidLoad() {
         setNeedsStatusBarAppearanceUpdate()
         addSubviews()
         setUpConstraints()
         loadPicture(name: cityNameLabel.text!)
-        self.view.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
         super.viewDidLoad()
     }
 }

@@ -15,6 +15,8 @@
 		548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548CE065234D33E600B5177D /* ZipCodeHelper.swift */; };
 		548CE068234D340700B5177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548CE067234D340700B5177D /* Assets.xcassets */; };
 		DF010BB4235422CC004F645E /* SecretAPIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF010BB3235422CC004F645E /* SecretAPIKeys.swift */; };
+		DF7B2F9B235CE4780092B3DE /* FavePict.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B2F9A235CE4780092B3DE /* FavePict.swift */; };
+		DF7B2F9D235CE5240092B3DE /* PicturePersistenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7B2F9C235CE5240092B3DE /* PicturePersistenceHelper.swift */; };
 		DF8FC17E2352CDFA00EB8B98 /* FaveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC17D2352CDFA00EB8B98 /* FaveImage.swift */; };
 		DF8FC1832352CE8200EB8B98 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1822352CE8200EB8B98 /* ImageHelper.swift */; };
 		DF8FC1852352CECC00EB8B98 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1842352CECC00EB8B98 /* AppError.swift */; };
@@ -61,6 +63,8 @@
 		548CE065234D33E600B5177D /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		548CE067234D340700B5177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF010BB3235422CC004F645E /* SecretAPIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretAPIKeys.swift; sourceTree = "<group>"; };
+		DF7B2F9A235CE4780092B3DE /* FavePict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavePict.swift; sourceTree = "<group>"; };
+		DF7B2F9C235CE5240092B3DE /* PicturePersistenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePersistenceHelper.swift; sourceTree = "<group>"; };
 		DF8FC17D2352CDFA00EB8B98 /* FaveImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveImage.swift; sourceTree = "<group>"; };
 		DF8FC1822352CE8200EB8B98 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		DF8FC1842352CECC00EB8B98 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				DF8FC19A2353847400EB8B98 /* PixabayPicture.json */,
 				DF8FC1982352D5B500EB8B98 /* DarkSkyWeather.swift */,
 				DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */,
+				DF7B2F9A235CE4780092B3DE /* FavePict.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				DFF916D7235906A700C89967 /* PersistenceHelper.swift */,
 				DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */,
+				DF7B2F9C235CE5240092B3DE /* PicturePersistenceHelper.swift */,
 			);
 			path = "Persistence Helpers";
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			files = (
 				DF8FC19E2353858400EB8B98 /* FaveViewController.swift in Sources */,
 				DF8FC1A1235385CB00EB8B98 /* WeatherViewController.swift in Sources */,
+				DF7B2F9D235CE5240092B3DE /* PicturePersistenceHelper.swift in Sources */,
 				DF010BB4235422CC004F645E /* SecretAPIKeys.swift in Sources */,
 				DF8FC1872352CF1D00EB8B98 /* NetworkHelper.swift in Sources */,
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
@@ -327,6 +334,7 @@
 				DF8FC1832352CE8200EB8B98 /* ImageHelper.swift in Sources */,
 				DF8FC1852352CECC00EB8B98 /* AppError.swift in Sources */,
 				DF8FC1972352D50600EB8B98 /* PixabayPicture.swift in Sources */,
+				DF7B2F9B235CE4780092B3DE /* FavePict.swift in Sources */,
 				DFEA7E4A23590DEC0001B603 /* ImagePersistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
