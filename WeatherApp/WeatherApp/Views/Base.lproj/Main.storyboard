@@ -240,11 +240,11 @@
                                     <constraint firstAttribute="height" constant="776" id="ACP-F1-0a8"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="faveCell" id="G3S-iE-8M1">
-                                        <rect key="frame" x="0.0" y="28" width="410" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="faveCell" rowHeight="280" id="G3S-iE-8M1">
+                                        <rect key="frame" x="0.0" y="28" width="410" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G3S-iE-8M1" id="Mpw-WL-Yar">
-                                            <rect key="frame" x="0.0" y="0.0" width="410" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

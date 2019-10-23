@@ -32,6 +32,8 @@
 		DF8FC1A423538AF300EB8B98 /* DarkSkyWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */; };
 		DF8FC1A523538AF300EB8B98 /* DarkSkyWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */; };
 		DF8FC1AA235417A900EB8B98 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */; };
+		DFAAD227235FF17C00C3F80B /* FavoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAAD226235FF17C00C3F80B /* FavoTableViewCell.swift */; };
+		DFAAD228235FF17C00C3F80B /* FavoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAAD226235FF17C00C3F80B /* FavoTableViewCell.swift */; };
 		DFEA7E4A23590DEC0001B603 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */; };
 		DFEA7E4B23590DEC0001B603 /* ImagePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */; };
 		DFEA7E4C235966F90001B603 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8FC1A0235385CB00EB8B98 /* WeatherViewController.swift */; };
@@ -79,6 +81,7 @@
 		DF8FC1A0235385CB00EB8B98 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		DF8FC1A323538AF300EB8B98 /* DarkSkyWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DarkSkyWeather.json; sourceTree = "<group>"; };
 		DF8FC1A9235417A900EB8B98 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
+		DFAAD226235FF17C00C3F80B /* FavoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoTableViewCell.swift; sourceTree = "<group>"; };
 		DFEA7E4923590DEC0001B603 /* ImagePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePersistence.swift; sourceTree = "<group>"; };
 		DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		DFF916CC235903F600C89967 /* PictureAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureAPIClient.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 				DFF916972357AB4B00C89967 /* ForecastCollectionViewCell.swift */,
 				548CE055234D33B500B5177D /* DetailWeatherViewController.swift */,
 				DF8FC19D2353858400EB8B98 /* FaveViewController.swift */,
+				DFAAD226235FF17C00C3F80B /* FavoTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -327,6 +331,7 @@
 				DFF916CD235903F600C89967 /* PictureAPIClient.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				DF8FC1992352D5B500EB8B98 /* DarkSkyWeather.swift in Sources */,
+				DFAAD227235FF17C00C3F80B /* FavoTableViewCell.swift in Sources */,
 				DFF916982357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
 				DF8FC17E2352CDFA00EB8B98 /* FaveImage.swift in Sources */,
@@ -347,6 +352,7 @@
 				DFEA7E4C235966F90001B603 /* WeatherViewController.swift in Sources */,
 				DFF916992357AB4B00C89967 /* ForecastCollectionViewCell.swift in Sources */,
 				DFEA7E4B23590DEC0001B603 /* ImagePersistence.swift in Sources */,
+				DFAAD228235FF17C00C3F80B /* FavoTableViewCell.swift in Sources */,
 				DFF916D9235906A700C89967 /* PersistenceHelper.swift in Sources */,
 				DF8FC18F2352D0D400EB8B98 /* WeatherAppTests.swift in Sources */,
 			);
