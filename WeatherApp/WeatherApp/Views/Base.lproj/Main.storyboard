@@ -225,6 +225,49 @@
             </objects>
             <point key="canvasLocation" x="866.66666666666674" y="81.696428571428569"/>
         </scene>
+        <!--Fave View Controller-->
+        <scene sceneID="hgJ-jM-aeU">
+            <objects>
+                <viewController id="jjp-pz-jZJ" customClass="FaveViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0EC-4a-Ncy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zBE-F2-GWt">
+                                <rect key="frame" x="2" y="46" width="410" height="776"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="776" id="ACP-F1-0a8"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="faveCell" id="G3S-iE-8M1">
+                                        <rect key="frame" x="0.0" y="28" width="410" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G3S-iE-8M1" id="Mpw-WL-Yar">
+                                            <rect key="frame" x="0.0" y="0.0" width="410" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zBE-F2-GWt" firstAttribute="top" secondItem="wHy-OU-SUr" secondAttribute="top" constant="2" id="23z-iV-J1p"/>
+                            <constraint firstItem="wHy-OU-SUr" firstAttribute="trailing" secondItem="zBE-F2-GWt" secondAttribute="trailing" constant="2" id="LE1-Zh-eHs"/>
+                            <constraint firstItem="zBE-F2-GWt" firstAttribute="centerX" secondItem="wHy-OU-SUr" secondAttribute="centerX" id="dnB-dh-oHW"/>
+                            <constraint firstItem="zBE-F2-GWt" firstAttribute="top" secondItem="wHy-OU-SUr" secondAttribute="top" constant="2" id="fpg-RM-CD9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wHy-OU-SUr"/>
+                    </view>
+                    <connections>
+                        <outlet property="faveTableView" destination="zBE-F2-GWt" id="mQa-lE-m7e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Li6-Ew-jil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131.8840579710145" y="726.5625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cloud.sun" catalog="system" width="64" height="44"/>
